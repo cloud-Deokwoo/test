@@ -54,6 +54,7 @@
 						<a href="list.board?pageNum=${pageVO.startPage-1 }">이전</a>
 					</li>
 				</c:if>
+				<!-- 1. 페이지 번호 처리 -->
 				<c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage }">
 					<li class="${num == pageVO.pageNum ? 'active':'' }">
 						<a href="list.board?pageNum=${num }">${num }</a>
