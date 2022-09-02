@@ -4,7 +4,7 @@
 
 	<section>
 		<div align="center">
-			<form name="regform" action="update.board" method="post" class="form-inline">
+			<form name="regform" action="update.board?pageNum=${requestScope.pageNum}" method="post" class="form-inline">
 				<h2>게시판 글 수정 페이지</h2>
 				<hr>
 				<table border="1" width="500">
@@ -28,8 +28,8 @@
 						<td colspan="4" align="center">
 							<div align="center" class="form-group">
 								<input type="button" value="수정하기" onclick="modifyCheck()" class="btn btn-primary">
-								<input type="button" value="목록" onclick="location.href='list.board'" class="form-control">
-								<input type="button" value="삭제하기" onclick="location.href='delete.board?num=${vo.num }'" class="btn btn-default">
+								<input type="button" value="목록" onclick="location.href='list.board?pageNum=${requestScope.pageNum}'" class="form-control">
+								<input type="button" value="삭제하기" onclick="location.href='delete.board?num=${vo.num }&pageNum=${requestScope.pageNum}'" class="btn btn-default">
 							</div>
 						</td>
 					</tr>

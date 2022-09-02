@@ -101,7 +101,8 @@ public class BoardController extends HttpServlet {
 			
 			//4번
 			String num = request.getParameter("num");
-			response.sendRedirect("/MyWeb/board/content.board?num="+num);
+			String pageNum = request.getParameter("pageNum");
+			response.sendRedirect("/MyWeb/board/content.board?num="+num+"$pageNum="+pageNum);
 		}else if(command.equals("/board/delete.board")) {
 			/*
 			 * 1. DeleteServiceImpl을 생성합니다.
@@ -113,7 +114,9 @@ public class BoardController extends HttpServlet {
 			service = new DeleteServiceImpl();
 			service.execute(request, response);
 			
-			response.sendRedirect("list.board");
+			String pageNum = request.getParameter("pageNum");
+			
+			response.sendRedirect("list.board?pageNum="+pageNum);
 		}
 	}
 

@@ -28,8 +28,8 @@
 					</tr>
 					<tr>
 						<td colspan="4" align="center">
-							<input type="button" value="목록" onclick="location.href='list.board'">
-							<input type="button" value="수정" onclick="location.href='modify.board?num=${vo.num }'">
+							<input type="button" value="목록" onclick="location.href='list.board?pageNum=${requestScope.pageNum}'">
+							<input type="button" value="수정" onclick="location.href='modify.board?num=${vo.num }$pageNum=${requestScope.pageNum}'">
 						</td>
 					</tr>
 				</table>

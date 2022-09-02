@@ -34,6 +34,12 @@ public class GetListServiceImpl implements IBoardService {
 			cri.setPageNum(Integer.parseInt(pageNum));
 		}
 		
+		if(request.getParameter("cnt")!=null) {
+			
+			String cnt = request.getParameter("cnt");
+			cri.setPageNum(Integer.parseInt(cnt));
+		}
+		
 		ArrayList<BoardVO> list = dao.getList(cri); //기존 getList()메소드 변경
 		
 		request.setAttribute("list", list);

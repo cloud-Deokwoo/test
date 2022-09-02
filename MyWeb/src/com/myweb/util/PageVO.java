@@ -32,7 +32,7 @@ public class PageVO {
 		this.startPage = endPage - 9;
 		
 		//realEnd : 페이지 번호가 endPage보다 적을 때 나타내는 진짜 끝번호
-		int realEnd = (int)Math.ceil(this.total/(double)10);
+		int realEnd = (int)Math.ceil(this.total/(double)cri.getCount());
 		
 		//마지막 페이지세팅으로 보여줘야 할 번호
 		if(this.endPage > realEnd) {

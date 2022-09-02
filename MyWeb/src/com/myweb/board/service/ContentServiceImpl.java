@@ -20,6 +20,7 @@ public class ContentServiceImpl implements IBoardService {
 		 */
 		
 		String num = request.getParameter("num");
+		String pageNum = request.getParameter("pageNum");
 		
 		BoardDAO dao = BoardDAO.getInstance();
 		
@@ -42,7 +43,7 @@ public class ContentServiceImpl implements IBoardService {
 		BoardVO vo = dao.getContent(num);
 		
 		request.setAttribute("vo", vo);
-		
+		request.setAttribute("pageNum", pageNum);
 		//조회수 처리하기 
 		//1. 쿠키를 생성하여 거기에 hit값 처리를 담당함(why? 중복 증가 방지를 위해서)
 		Cookie hitCoo = new Cookie("hitNum"+num, num); //num게시글 번호 

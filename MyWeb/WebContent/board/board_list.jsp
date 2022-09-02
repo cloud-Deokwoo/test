@@ -22,7 +22,7 @@
 						<td>${vo.num }</td>
 						<td>${vo.writer }</td>
 						<td>
-							<a href="content.board?num=${vo.num }">${vo.title }</a>
+							<a href="content.board?num=${vo.num }&pageNum=${pageVO.pageNum}">${vo.title }</a>
 						</td>
 						<td>${vo.regdate }</td>
 						<td>${vo.hit }</td>
@@ -48,12 +48,23 @@
 		<!-- 페이지 작업하는 공간 -->
 		<div align="center">
 			<ul class="pagination pagination-sm">
-				<li><a href="#">이전</a></li>
-				<li><a href="list.board?pageNum=1">1</a></li>
-				<li><a href="list.board?pageNum=2">2</a></li>
-				<li><a href="list.board?pageNum=3">3</a></li>
-				<li><a href="list.board?pageNum=4">4</a></li>
-				<li><a href="#">다음</a></li>
+				<!-- 2. 이전 버튼 활성화 여부 -->
+				<c:if test="pageVO.prev">
+					<li>
+						<a href="list.board?pageNum=${pageVO.startPage-1 }">이전</a>
+					</li>
+				</c:if>
+				<c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage }">
+					<li class="${num == pageVO.pageNum ? 'active':'' }">
+						<a href="list.board?pageNum=${num }">${num }</a>
+					</li>
+				</c:forEach>
+				<!-- 2. 다음 버튼 활성화 여부  -->
+				<c:if test="pageVO.next">
+					<li>
+						<a href="list.board?pageNum=${pageVO.endPage+1 }">다음</a>
+					</li>
+				</c:if>
 			</ul>
 		</div>
 		
