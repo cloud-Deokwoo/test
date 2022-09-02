@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Context>
+<Context>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <Resource 
+      auth="Container"
+      driverClassName = "oracle.jdbc.driver.OracleDriver"
+      url = "jdbc:oracle:thin:@192.168.100.29:1521/XEPDB1"
+      username = "myjsp"
+      password = "myjsp"
+      name = "jdbc/oracle2"
+      type = "javax.sql.DataSource"
+      maxActive = "300"
+      maxWait = "1000"
+      />
+      <!-- maxTotal값은 커넥션을 몇개 만들 것이지, maxIdle : 몇 개의 커넥션이 항상 대기 상태일지 결정 -->
+</Context>
+
+
+
+
+
+
+
+
